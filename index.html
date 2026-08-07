@@ -8,7 +8,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
   <style>
+    /* Complete Embedded Visual System */
     :root {
       --primary: #0284C7;
       --primary-hover: #0369A1;
@@ -29,6 +31,7 @@
       --radius-sm: 8px;
       --radius-md: 12px;
     }
+
     [data-theme="dark"] {
       --bg-main: #0B1120;
       --surface: #1E293B;
@@ -39,35 +42,44 @@
       --badge-bg: rgba(56, 189, 248, 0.15);
       --badge-color: #38BDF8;
     }
+
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
+    
     .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     .section { padding: 80px 0; }
     .text-center { text-align: center; }
+    
     .badge { display: inline-block; padding: 6px 16px; background-color: var(--badge-bg); color: var(--badge-color); border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
     .glass-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; }
     .glass-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    
     .img-responsive { width: 100%; height: auto; border-radius: var(--radius-md); object-fit: cover; }
     .card-img-top { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-md) var(--radius-md) 0 0; }
     .icon-box { width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--badge-bg); color: var(--badge-color); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
-    .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; }
-    [data-theme="dark"] .header { background: rgba(15, 23, 42, 0.9); }
+    
+    .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; }
+    [data-theme="dark"] .header { background: rgba(15, 23, 42, 0.95); }
     .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
     .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.25rem; text-decoration: none; color: var(--text-main); }
     .logo-icon { width: 40px; height: 40px; background: var(--hero-gradient); color: #FFF; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-weight: 800; }
     .nav-links { display: flex; gap: 24px; }
     .nav-link { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--primary); }
+    
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
     .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; }
     .btn-primary { background: var(--primary); color: #FFFFFF; }
     .btn-primary:hover { background: var(--primary-hover); }
     .btn-outline { border: 1px solid var(--border-color); color: var(--text-main); background: transparent; }
     .btn-outline:hover { background: var(--surface-alt); }
+    
     .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 999; font-size: 1.8rem; text-decoration: none; transition: transform 0.3s; }
     .whatsapp-float:hover { transform: scale(1.1); }
+    
     .footer { background: var(--dark-navy); color: #94A3B8; padding: 60px 0 30px; }
     .footer h4 { color: #FFF; margin-bottom: 20px; }
     .footer-links { list-style: none; }
@@ -75,6 +87,7 @@
     .footer-links a { color: #94A3B8; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: #FFF; }
     .footer-bottom { border-top: 1px solid #334155; margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; }
+
     @media (max-width: 900px) {
       .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
       .nav-links { display: none; }
@@ -101,8 +114,8 @@
         <a href="#" class="nav-link">Contact</a>
       </nav>
 
-      <div class="nav-actions" style="display: flex; gap: 12px; align-items: center;">
-        <button id="theme-toggle" class="btn btn-outline" style="padding: 8px 12px;" aria-label="Toggle Theme" onclick="toggleTheme()"><i class="fa-solid fa-moon"></i></button>
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button class="btn btn-outline" style="padding: 8px 12px;" onclick="toggleTheme()" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
         <a href="#" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Request Quote</a>
       </div>
     </div>
@@ -113,44 +126,45 @@
     <div class="container grid-2" style="align-items: center;">
       <div>
         <span class="badge"><i class="fa-solid fa-shield-halved"></i> ISO Certified Chemical Manufacturing</span>
-        <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 20px;">Enterprise Hygiene & Industrial Cleaning Solutions</h1>
-        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px;">Formulating, blending, and supplying high-performance commercial cleaning chemicals, floor disinfections, and custom OEM private-label lines across South India.</p>
+        <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 20px;">Professional Hygiene. Engineered for Business.</h1>
+        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px;">Bangalore’s leading commercial hygiene products manufacturer. Delivering concentrated, high-efficacy formulations for hotels, hospitals, corporate campuses, and facility managers.</p>
         <div style="display: flex; gap: 16px;">
           <a href="#" class="btn btn-primary"><i class="fa-solid fa-boxes-stacked"></i> Explore Products</a>
           <a href="#" class="btn btn-outline"><i class="fa-solid fa-flask"></i> Request Free Samples</a>
         </div>
       </div>
       <div>
-        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80" alt="Industrial Chemical Manufacturing" class="img-responsive" style="box-shadow: var(--shadow-lg);">
+        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80" alt="Chemical Manufacturing Plant" class="img-responsive" style="box-shadow: var(--shadow-lg);">
       </div>
     </div>
   </section>
 
-  <!-- Core Features -->
+  <!-- Features Grid -->
   <section class="section">
     <div class="container">
       <div class="text-center" style="margin-bottom: 48px;">
-        <span class="badge">Why Hello Hygiene</span>
-        <h2>Built for High-Volume Facilities</h2>
+        <span class="badge">Industrial Grade Formulation</span>
+        <h2>99.99% Efficacy Assured</h2>
+        <p style="color: var(--text-muted); margin-top: 8px;">Precision-formulated commercial compounds optimized for scale, safety, and rapid surface disinfection.</p>
       </div>
 
       <div class="grid-3">
         <div class="glass-card">
           <div class="icon-box"><i class="fa-solid fa-vial-circle-check"></i></div>
-          <h3>Custom Lab Formulations</h3>
-          <p style="margin-top: 8px; color: var(--text-muted);">Adjust viscosity, color profiles, active surfactant percentages, and fragrance notes precisely for your needs.</p>
+          <h3>Custom R&D Formulation</h3>
+          <p style="margin-top: 8px; color: var(--text-muted);">Adjust active surfactants, fragrance profiles, viscosity, and dyes tailored to your brand specifications.</p>
         </div>
 
         <div class="glass-card">
           <div class="icon-box"><i class="fa-solid fa-industry"></i></div>
-          <h3>Automated Bottling Lines</h3>
-          <p style="margin-top: 8px; color: var(--text-muted);">Equipped for rapid automated liquid filling across 500ml, 5L cans, and 20L commercial drums.</p>
+          <h3>High-Capacity Bottling</h3>
+          <p style="margin-top: 8px; color: var(--text-muted);">Automated liquid packaging operations across 500ml retail bottles, 5L cans, and 20L commercial drums.</p>
         </div>
 
         <div class="glass-card">
           <div class="icon-box"><i class="fa-solid fa-truck-fast"></i></div>
-          <h3>Direct Regional Logistics</h3>
-          <p style="margin-top: 8px; color: var(--text-muted);">Guaranteed 24-48 hour delivery response time across Bengaluru industrial hubs and Karnataka districts.</p>
+          <h3>Rapid Factory Dispatch</h3>
+          <p style="margin-top: 8px; color: var(--text-muted);">Direct bulk shipping from our Peenya, Bangalore facility with 24 to 48-hour regional turnaround.</p>
         </div>
       </div>
     </div>
@@ -160,8 +174,8 @@
   <section class="section" style="background: var(--surface-alt);">
     <div class="container">
       <div class="text-center" style="margin-bottom: 48px;">
-        <span class="badge">Commercial Lineup</span>
-        <h2>Popular Commercial SKUs</h2>
+        <span class="badge">Core Offerings</span>
+        <h2>Bulk Hygiene SKUs</h2>
       </div>
 
       <div class="grid-3">
@@ -169,19 +183,19 @@
           <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=600&q=80" alt="Floor Cleaner" class="card-img-top">
           <div style="padding: 24px;">
             <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">HEAVY DUTY</span>
-            <h3 style="margin: 6px 0;">Commercial Floor Cleaner</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Pine and lemon scented concentrates engineered for high-footfall tiled and epoxy surface areas.</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Specifications</a>
+            <h3 style="margin: 6px 0;">Disinfectant Floor Cleaner</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Pine & Lemon concentrates engineered for high-footfall tiled and epoxy surfaces.</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Product Spec Sheet</a>
           </div>
         </div>
 
         <div class="glass-card" style="padding: 0;">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Handwash" class="card-img-top">
+          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Liquid Hand Wash" class="card-img-top">
           <div style="padding: 24px;">
             <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary);">ANTIBACTERIAL</span>
             <h3 style="margin: 6px 0;">Commercial Hand Wash</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Moisturizing pH-balanced formulation for corporate restrooms, hotels, and food preparation spaces.</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Specifications</a>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Moisturizing pH-balanced formulation for corporate restrooms and hospital facilities.</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Product Spec Sheet</a>
           </div>
         </div>
 
@@ -190,8 +204,8 @@
           <div style="padding: 24px;">
             <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent);">STREAK-FREE</span>
             <h3 style="margin: 6px 0;">Glass & Multi-Surface Cleaner</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Fast-evaporating isopropyl formula that leaves zero streaks on glass facades and mirrors.</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Specifications</a>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Rapid evaporating formula leaving zero streaks on corporate glass facades and mirrors.</p>
+            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Product Spec Sheet</a>
           </div>
         </div>
       </div>
@@ -199,7 +213,7 @@
   </section>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919000000000" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us">
+  <a href="https://wa.me/919000000000" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
@@ -219,20 +233,18 @@
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Floor Cleaners</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Dish Wash Gel</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Liquid Hand Wash</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Glass Cleaner</a></li>
         </ul>
       </div>
       <div>
         <h4>Company</h4>
         <ul class="footer-links">
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Industries Served</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> OEM Manufacturing</a></li>
           <li><a href="#"><i class="fa-solid fa-angle-right"></i> Distributor Network</a></li>
         </ul>
       </div>
       <div>
-        <h4>Contact HQ</h4>
+        <h4>Factory HQ</h4>
         <p><i class="fa-solid fa-location-dot"></i> Peenya Industrial Area, Phase 1, Bangalore - 560058</p>
         <p style="margin-top: 12px;"><i class="fa-solid fa-envelope"></i> contact@hellohygiene.in</p>
         <p style="margin-top: 4px;"><i class="fa-solid fa-phone"></i> +91 80 1234 5678</p>
