@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Hygiene | Enterprise Cleaning & Chemical Manufacturing</title>
+  <title>Hello Hygiene | House Keeping Materials & Professional Cleaning Solutions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   
   <style>
-    /* Complete Embedded Visual System */
     :root {
       --primary: #0284C7;
       --primary-hover: #0369A1;
@@ -30,6 +29,12 @@
       --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
       --radius-sm: 8px;
       --radius-md: 12px;
+      
+      /* Category Colors */
+      --color-home: #E11D48;
+      --color-office: #0284C7;
+      --color-hotel: #7C3AED;
+      --color-kitchen: #EA580C;
     }
 
     [data-theme="dark"] {
@@ -46,30 +51,26 @@
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: 'Inter', system-ui, -apple-system, sans-serif; background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
     
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    .section { padding: 80px 0; }
+    .container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+    .section { padding: 70px 0; }
     .text-center { text-align: center; }
     
     .badge { display: inline-block; padding: 6px 16px; background-color: var(--badge-bg); color: var(--badge-color); border-radius: 50px; font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; }
-    .glass-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 32px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; overflow: hidden; }
+    .glass-card { background: var(--surface); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 24px; box-shadow: var(--shadow-sm); transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .glass-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
-    
-    .img-responsive { width: 100%; height: auto; border-radius: var(--radius-md); object-fit: cover; }
-    .card-img-top { width: 100%; height: 220px; object-fit: cover; border-radius: var(--radius-md) var(--radius-md) 0 0; }
-    .icon-box { width: 56px; height: 56px; border-radius: var(--radius-sm); background: var(--badge-bg); color: var(--badge-color); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 20px; }
     
     .header { position: fixed; top: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); z-index: 1000; }
     [data-theme="dark"] .header { background: rgba(15, 23, 42, 0.95); }
     .nav-container { display: flex; align-items: center; justify-content: space-between; height: 80px; }
-    .logo { display: flex; align-items: center; gap: 12px; font-weight: 800; font-size: 1.25rem; text-decoration: none; color: var(--text-main); }
-    .logo-icon { width: 40px; height: 40px; background: var(--hero-gradient); color: #FFF; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-weight: 800; }
+    .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.35rem; text-decoration: none; color: var(--text-main); }
+    .logo-icon { width: 42px; height: 42px; background: var(--hero-gradient); color: #FFF; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
     .nav-links { display: flex; gap: 24px; }
     .nav-link { text-decoration: none; color: var(--text-main); font-weight: 500; transition: color 0.2s; }
     .nav-link:hover, .nav-link.active { color: var(--primary); }
     
     .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
     .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+    .grid-5 { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
     
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: var(--radius-sm); font-weight: 600; text-decoration: none; cursor: pointer; border: none; transition: all 0.2s ease; }
     .btn-primary { background: var(--primary); color: #FFFFFF; }
@@ -77,6 +78,34 @@
     .btn-outline { border: 1px solid var(--border-color); color: var(--text-main); background: transparent; }
     .btn-outline:hover { background: var(--surface-alt); }
     
+    /* Category Header Banners */
+    .cat-header { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: var(--radius-sm); color: white; margin-bottom: 20px; }
+    .cat-header.home { background-color: var(--color-home); }
+    .cat-header.office { background-color: var(--color-office); }
+    .cat-header.hotel { background-color: var(--color-hotel); }
+    .cat-header.kitchen { background-color: var(--color-kitchen); }
+    .cat-header h3 { font-size: 1.2rem; margin: 0; }
+    .cat-header p { font-size: 0.8rem; opacity: 0.9; margin: 0; }
+    
+    /* Product Item Specs with Image Alignment */
+    .product-list { list-style: none; margin: 16px 0; }
+    .product-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px dashed var(--border-color); font-size: 0.9rem; }
+    .product-info { display: flex; align-items: center; gap: 12px; }
+    .product-thumb { width: 48px; height: 48px; object-fit: contain; flex-shrink: 0; background: var(--surface-alt); border-radius: 6px; padding: 4px; }
+    .product-tag { font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; background: var(--surface-alt); font-weight: 600; white-space: nowrap; }
+
+    /* Feature Tags */
+    .feature-tag-list { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 16px; }
+    .feature-pill { font-size: 0.75rem; font-weight: 600; padding: 4px 10px; border-radius: 20px; background: var(--surface-alt); color: var(--text-muted); display: flex; align-items: center; gap: 4px; }
+
+    /* Fragrance Cards */
+    .fragrance-card { text-align: center; padding: 20px 10px; border-radius: var(--radius-sm); background: var(--surface); border: 1px solid var(--border-color); }
+    .fragrance-icon { width: 50px; height: 50px; border-radius: 50%; margin: 0 auto 10px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; }
+
+    /* Refill Pills */
+    .refill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 12px; margin-top: 20px; }
+    .refill-item { border-radius: var(--radius-sm); padding: 12px; text-align: center; color: white; font-weight: 700; font-size: 0.8rem; box-shadow: var(--shadow-sm); }
+
     .whatsapp-float { position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25D366; color: #FFF; border-radius: 50px; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0,0,0,0.15); z-index: 999; font-size: 1.8rem; text-decoration: none; transition: transform 0.3s; }
     .whatsapp-float:hover { transform: scale(1.1); }
     
@@ -88,8 +117,12 @@
     .footer-links a:hover { color: #FFF; }
     .footer-bottom { border-top: 1px solid #334155; margin-top: 40px; padding-top: 20px; display: flex; justify-content: space-between; }
 
-    @media (max-width: 900px) {
-      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+    @media (max-width: 1024px) {
+      .grid-4 { grid-template-columns: repeat(2, 1fr); }
+      .grid-5 { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .grid-2, .grid-4, .grid-5 { grid-template-columns: 1fr; }
       .nav-links { display: none; }
     }
   </style>
@@ -100,154 +133,396 @@
   <header class="header">
     <div class="container nav-container">
       <a href="#" class="logo">
-        <div class="logo-icon"><i class="fa-solid fa-droplet"></i></div>
+        <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
         <span>Hello Hygiene</span>
       </a>
 
       <nav class="nav-links">
-        <a href="#" class="nav-link active">Home</a>
-        <a href="#" class="nav-link">About Us</a>
-        <a href="#" class="nav-link">Products</a>
-        <a href="#" class="nav-link">Industries</a>
-        <a href="#" class="nav-link">OEM Manufacturing</a>
-        <a href="#" class="nav-link">Distributors</a>
-        <a href="#" class="nav-link">Contact</a>
+        <a href="#sectors" class="nav-link active">Solutions</a>
+        <a href="#fragrances" class="nav-link">Fragrances</a>
+        <a href="#refills" class="nav-link">Refill Packs</a>
+        <a href="#bulk" class="nav-link">Bulk Orders</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </nav>
 
       <div style="display: flex; gap: 12px; align-items: center;">
         <button class="btn btn-outline" style="padding: 8px 12px;" onclick="toggleTheme()" aria-label="Toggle Theme"><i class="fa-solid fa-moon"></i></button>
-        <a href="#" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Request Quote</a>
+        <a href="tel:+911234567890" class="btn btn-primary"><i class="fa-solid fa-phone"></i> +91 12345 67890</a>
       </div>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="section" style="padding-top: 160px; padding-bottom: 80px; background: var(--surface-alt);">
-    <div class="container grid-2" style="align-items: center;">
-      <div>
-        <span class="badge"><i class="fa-solid fa-shield-halved"></i> ISO Certified Chemical Manufacturing</span>
-        <h1 style="font-size: 2.8rem; line-height: 1.15; margin-bottom: 20px;">Professional Hygiene. Engineered for Business.</h1>
-        <p style="font-size: 1.05rem; color: var(--text-muted); margin-bottom: 30px;">Bangalore’s leading commercial hygiene products manufacturer. Delivering concentrated, high-efficacy formulations for hotels, hospitals, corporate campuses, and facility managers.</p>
-        <div style="display: flex; gap: 16px;">
-          <a href="#" class="btn btn-primary"><i class="fa-solid fa-boxes-stacked"></i> Explore Products</a>
-          <a href="#" class="btn btn-outline"><i class="fa-solid fa-flask"></i> Request Free Samples</a>
-        </div>
-      </div>
-      <div>
-        <img src="https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=800&q=80" alt="Chemical Manufacturing Plant" class="img-responsive" style="box-shadow: var(--shadow-lg);">
+  <section class="section" style="padding-top: 150px; padding-bottom: 60px; background: var(--surface-alt);">
+    <div class="container text-center" style="max-width: 900px;">
+      <span class="badge"><i class="fa-solid fa-shield-halved"></i> House Keeping Materials</span>
+      <h1 style="font-size: 3rem; line-height: 1.15; margin-bottom: 16px; font-weight: 800;">CLEAN SPACES. BETTER LIVING.</h1>
+      <p style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 28px;">Powerful Cleaning Solutions for Every Space — Formulated for Homes, Office Parks, Hotels, and Commercial Kitchens.</p>
+      <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+        <a href="#sectors" class="btn btn-primary"><i class="fa-solid fa-boxes-stacked"></i> Explore Products</a>
+        <a href="#bulk" class="btn btn-outline"><i class="fa-solid fa-drum"></i> Commercial Bulk Orders</a>
       </div>
     </div>
   </section>
 
-  <!-- Features Grid -->
-  <section class="section">
+  <!-- Product Catalog by Sector -->
+  <section id="sectors" class="section">
     <div class="container">
       <div class="text-center" style="margin-bottom: 48px;">
-        <span class="badge">Industrial Grade Formulation</span>
-        <h2>99.99% Efficacy Assured</h2>
-        <p style="color: var(--text-muted); margin-top: 8px;">Precision-formulated commercial compounds optimized for scale, safety, and rapid surface disinfection.</p>
+        <span class="badge">Complete Range</span>
+        <h2>Tailored Solutions for Every Environment</h2>
       </div>
 
-      <div class="grid-3">
+      <div class="grid-4">
+        
+        <!-- Sector 1: HOME -->
         <div class="glass-card">
-          <div class="icon-box"><i class="fa-solid fa-vial-circle-check"></i></div>
-          <h3>Custom R&D Formulation</h3>
-          <p style="margin-top: 8px; color: var(--text-muted);">Adjust active surfactants, fragrance profiles, viscosity, and dyes tailored to your brand specifications.</p>
+          <div class="cat-header home">
+            <i class="fa-solid fa-house-chimney fa-lg"></i>
+            <div>
+              <h3>HOME</h3>
+              <p>Clean Spaces. Happy Faces.</p>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Safe, effective, and gentle cleaning solutions for every corner of your home.</p>
+
+          <ul class="product-list">
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/toilet-cleaner.png" alt="Toilet Cleaner" class="product-thumb">
+                <div>
+                  <strong>Toilet Cleaner</strong><br>
+                  <small style="color: var(--text-muted);">10X Max Clean</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/hand-wash.png" alt="Bathroom Cleaner" class="product-thumb">
+                <div>
+                  <strong>Bathroom Cleaner</strong><br>
+                  <small style="color: var(--text-muted);">10X Tough Stains</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/multipurpose-cleaner.png" alt="Multi Purpose Cleaner" class="product-thumb">
+                <div>
+                  <strong>Multi Purpose</strong><br>
+                  <small style="color: var(--text-muted);">Powerful Cleaning</small>
+                </div>
+              </div>
+              <span class="product-tag">5 L</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/hand-wash.png" alt="Hand Wash" class="product-thumb">
+                <div>
+                  <strong>Hand Wash</strong><br>
+                  <small style="color: var(--text-muted);">Gentle & Moisturizing</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+          </ul>
+
+          <div class="feature-tag-list">
+            <span class="feature-pill"><i class="fa-solid fa-shield-cat"></i> Safe for Family</span>
+            <span class="feature-pill"><i class="fa-solid fa-xmark"></i> Removes Dirt</span>
+            <span class="feature-pill"><i class="fa-solid fa-wind"></i> Fresh Fragrance</span>
+          </div>
         </div>
 
+        <!-- Sector 2: OFFICE PARKS -->
         <div class="glass-card">
-          <div class="icon-box"><i class="fa-solid fa-industry"></i></div>
-          <h3>High-Capacity Bottling</h3>
-          <p style="margin-top: 8px; color: var(--text-muted);">Automated liquid packaging operations across 500ml retail bottles, 5L cans, and 20L commercial drums.</p>
+          <div class="cat-header office">
+            <i class="fa-solid fa-building fa-lg"></i>
+            <div>
+              <h3>OFFICE PARKS</h3>
+              <p>Clean Spaces. Productive Places.</p>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">High performance cleaning solutions to maintain hygiene and professional work environments.</p>
+
+          <ul class="product-list">
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/surface-cleaner.png" alt="Surface Cleaner" class="product-thumb">
+                <div>
+                  <strong>Surface Cleaner</strong><br>
+                  <small style="color: var(--text-muted);">All Surfaces</small>
+                </div>
+              </div>
+              <span class="product-tag">1 L</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/surface-cleaner.png" alt="Glass Cleaner" class="product-thumb">
+                <div>
+                  <strong>Glass Cleaner</strong><br>
+                  <small style="color: var(--text-muted);">Streak Free Shine</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/hand-wash.png" alt="Hand Wash" class="product-thumb">
+                <div>
+                  <strong>Hand Wash</strong><br>
+                  <small style="color: var(--text-muted);">Gentle & Moisturizing</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+          </ul>
+
+          <div class="feature-tag-list">
+            <span class="feature-pill"><i class="fa-solid fa-check"></i> Maintains Hygiene</span>
+            <span class="feature-pill"><i class="fa-solid fa-sparkles"></i> Streak Free</span>
+            <span class="feature-pill"><i class="fa-solid fa-clock"></i> Long Lasting</span>
+          </div>
         </div>
 
+        <!-- Sector 3: HOTELS -->
         <div class="glass-card">
-          <div class="icon-box"><i class="fa-solid fa-truck-fast"></i></div>
-          <h3>Rapid Factory Dispatch</h3>
-          <p style="margin-top: 8px; color: var(--text-muted);">Direct bulk shipping from our Peenya, Bangalore facility with 24 to 48-hour regional turnaround.</p>
+          <div class="cat-header hotel">
+            <i class="fa-solid fa-hotel fa-lg"></i>
+            <div>
+              <h3>HOTELS</h3>
+              <p>Clean Spaces. Memorable Stays.</p>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Premium cleaning solutions for guest rooms, lobbies, and all hotel areas.</p>
+
+          <ul class="product-list">
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/multipurpose-cleaner.png" alt="Laundry Detergent" class="product-thumb">
+                <div>
+                  <strong>Laundry Detergent</strong><br>
+                  <small style="color: var(--text-muted);">Bright & Soft Linen</small>
+                </div>
+              </div>
+              <span class="product-tag">5 L</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/hand-wash.png" alt="Hand Wash" class="product-thumb">
+                <div>
+                  <strong>Hand Wash</strong><br>
+                  <small style="color: var(--text-muted);">Luxe Lather</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/hand-wash.png" alt="Room Freshener" class="product-thumb">
+                <div>
+                  <strong>Room Freshener</strong><br>
+                  <small style="color: var(--text-muted);">Long Lasting</small>
+                </div>
+              </div>
+              <span class="product-tag">250 ml</span>
+            </li>
+          </ul>
+
+          <div class="feature-tag-list">
+            <span class="feature-pill"><i class="fa-solid fa-face-smile"></i> Guest Satisfaction</span>
+            <span class="feature-pill"><i class="fa-solid fa-spray-can"></i> Premium Quality</span>
+          </div>
         </div>
+
+        <!-- Sector 4: KITCHENS -->
+        <div class="glass-card">
+          <div class="cat-header kitchen">
+            <i class="fa-solid fa-utensils fa-lg"></i>
+            <div>
+              <h3>KITCHENS</h3>
+              <p>Clean Kitchens. Safe Food.</p>
+            </div>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Powerful degreasers and cleaners designed for commercial kitchens and food-safe areas.</p>
+
+          <ul class="product-list">
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/kitchen-degreaser.png" alt="Kitchen Degreaser" class="product-thumb">
+                <div>
+                  <strong>Kitchen Degreaser</strong><br>
+                  <small style="color: var(--text-muted);">Tough on Grease</small>
+                </div>
+              </div>
+              <span class="product-tag">5 L</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/surface-cleaner.png" alt="Surface Cleaner" class="product-thumb">
+                <div>
+                  <strong>Surface Cleaner</strong><br>
+                  <small style="color: var(--text-muted);">Food Safe Formula</small>
+                </div>
+              </div>
+              <span class="product-tag">750 ml</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/dishwash-liquid.png" alt="Dishwash Liquid" class="product-thumb">
+                <div>
+                  <strong>Dishwash Liquid</strong><br>
+                  <small style="color: var(--text-muted);">Kind on Hands</small>
+                </div>
+              </div>
+              <span class="product-tag">500 ml</span>
+            </li>
+            <li class="product-item">
+              <div class="product-info">
+                <img src="images/dishwasher-detergen.png" alt="Dishwasher Detergent" class="product-thumb">
+                <div>
+                  <strong>Dishwasher Detergent</strong><br>
+                  <small style="color: var(--text-muted);">Sparkling Shine</small>
+                </div>
+              </div>
+              <span class="product-tag">5 L</span>
+            </li>
+          </ul>
+
+          <div class="feature-tag-list">
+            <span class="feature-pill"><i class="fa-solid fa-fire"></i> Tough on Grease</span>
+            <span class="feature-pill"><i class="fa-solid fa-bowl-food"></i> Food Safe</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Product Showcase -->
-  <section class="section" style="background: var(--surface-alt);">
+  <!-- Fragrances Section -->
+  <section id="fragrances" class="section" style="background: var(--surface-alt);">
     <div class="container">
-      <div class="text-center" style="margin-bottom: 48px;">
-        <span class="badge">Core Offerings</span>
-        <h2>Bulk Hygiene SKUs</h2>
+      <div class="text-center" style="margin-bottom: 36px;">
+        <span class="badge">Aroma Range</span>
+        <h2>Custom Fragrances Available</h2>
+        <p style="color: var(--text-muted);">Choose from a range of refreshing fragrances to suit your space.</p>
       </div>
 
-      <div class="grid-3">
-        <div class="glass-card" style="padding: 0;">
-          <img src="https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?auto=format&fit=crop&w=600&q=80" alt="Floor Cleaner" class="card-img-top">
-          <div style="padding: 24px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--primary);">HEAVY DUTY</span>
-            <h3 style="margin: 6px 0;">Disinfectant Floor Cleaner</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Pine & Lemon concentrates engineered for high-footfall tiled and epoxy surfaces.</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Product Spec Sheet</a>
-          </div>
+      <div class="grid-5">
+        <div class="fragrance-card">
+          <div class="fragrance-icon" style="background: #EDE9FE; color: #7C3AED;"><i class="fa-solid fa-spa"></i></div>
+          <h4 style="font-size: 0.95rem;">LAVENDER FRESH</h4>
         </div>
-
-        <div class="glass-card" style="padding: 0;">
-          <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=600&q=80" alt="Liquid Hand Wash" class="card-img-top">
-          <div style="padding: 24px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--secondary);">ANTIBACTERIAL</span>
-            <h3 style="margin: 6px 0;">Commercial Hand Wash</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Moisturizing pH-balanced formulation for corporate restrooms and hospital facilities.</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Product Spec Sheet</a>
-          </div>
+        <div class="fragrance-card">
+          <div class="fragrance-icon" style="background: #FFEDD5; color: #EA580C;"><i class="fa-solid fa-lemon"></i></div>
+          <h4 style="font-size: 0.95rem;">CITRUS ZEST</h4>
         </div>
+        <div class="fragrance-card">
+          <div class="fragrance-icon" style="background: #FCE7F3; color: #DB2777;"><i class="fa-solid fa-flower"></i></div>
+          <h4 style="font-size: 0.95rem;">FLORAL BLOOM</h4>
+        </div>
+        <div class="fragrance-card">
+          <div class="fragrance-icon" style="background: #FEF08A; color: #CA8A04;"><i class="fa-solid fa-sun"></i></div>
+          <h4 style="font-size: 0.95rem;">LEMON FRESH</h4>
+        </div>
+        <div class="fragrance-card">
+          <div class="fragrance-icon" style="background: #E0F2FE; color: #0284C7;"><i class="fa-solid fa-water"></i></div>
+          <h4 style="font-size: 0.95rem;">OCEAN BREEZE</h4>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="glass-card" style="padding: 0;">
-          <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=600&q=80" alt="Glass Cleaner" class="card-img-top">
-          <div style="padding: 24px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent);">STREAK-FREE</span>
-            <h3 style="margin: 6px 0;">Glass & Multi-Surface Cleaner</h3>
-            <p style="color: var(--text-muted); font-size: 0.95rem;">Rapid evaporating formula leaving zero streaks on corporate glass facades and mirrors.</p>
-            <a href="#" class="btn btn-outline" style="margin-top: 16px; width: 100%; justify-content: center;"><i class="fa-solid fa-circle-info"></i> View Product Spec Sheet</a>
+  <!-- Refill Packs Section -->
+  <section id="refills" class="section">
+    <div class="container text-center">
+      <span class="badge"><i class="fa-solid fa-recycle"></i> Sustainability</span>
+      <h2>Refill Packs Available</h2>
+      <p style="color: var(--text-muted); max-width: 600px; margin: 8px auto 24px;">Eco-friendly refills for your everyday cleaning needs. Reduce plastic waste while keeping costs low.</p>
+
+      <div class="refill-grid">
+        <div class="refill-item" style="background-color: #0284C7;">TOILET CLEANER REFILL</div>
+        <div class="refill-item" style="background-color: #CA8A04;">BATHROOM CLEANER REFILL</div>
+        <div class="refill-item" style="background-color: #E11D48;">MULTIPURPOSE CLEANER REFILL</div>
+        <div class="refill-item" style="background-color: #0D9488;">HAND WASH REFILL</div>
+        <div class="refill-item" style="background-color: #0284C7;">SURFACE CLEANER REFILL</div>
+        <div class="refill-item" style="background-color: #0284C7;">GLASS CLEANER REFILL</div>
+        <div class="refill-item" style="background-color: #7C3AED;">LAUNDRY DETERGENT REFILL</div>
+        <div class="refill-item" style="background-color: #7C3AED;">ROOM FRESHENER REFILL</div>
+        <div class="refill-item" style="background-color: #EA580C;">DEGREASER REFILL</div>
+        <div class="refill-item" style="background-color: #EA580C;">DISHWASH REFILL</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bulk Orders Section -->
+  <section id="bulk" class="section" style="background: var(--surface-alt);">
+    <div class="container">
+      <div class="glass-card" style="padding: 40px;">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="badge"><i class="fa-solid fa-truck-ramp-box"></i> B2B & Wholesale</span>
+            <h2>Bulk Orders (Concentrated Formulations)</h2>
+            <p style="color: var(--text-muted); margin: 12px 0 24px;">Cost-effective solutions for commercial spaces, industries, and facilities management. Custom packaging available for bulk requirements (20L / 50L / 200L drums).</p>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+              <div><i class="fa-solid fa-droplet" style="color: var(--primary);"></i> <strong>Highly Concentrated</strong></div>
+              <div><i class="fa-solid fa-sack-dollar" style="color: var(--accent);"></i> <strong>Cost Effective</strong></div>
+              <div><i class="fa-solid fa-leaf" style="color: var(--accent);"></i> <strong>Eco Friendly</strong></div>
+              <div><i class="fa-solid fa-box" style="color: var(--primary);"></i> <strong>Custom Packaging</strong></div>
+            </div>
+          </div>
+
+          <div class="text-center" style="background: var(--surface); padding: 30px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <img src="images/bulk-drum.png" alt="Bulk Concentrated Drum" style="width: 140px; height: 140px; object-fit: contain; margin-bottom: 16px;">
+            <h3>Request Wholesale Pricing</h3>
+            <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;">Get factory-direct pricing for corporate accounts.</p>
+            <a href="https://wa.me/911234567890?text=Hi%20Hello%20Hygiene,%20I%20am%20interested%20in%20Bulk%20Orders" class="btn btn-primary" style="width: 100%; justify-content: center;"><i class="fa-brands fa-whatsapp"></i> Inquire via WhatsApp</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Floating WhatsApp -->
-  <a href="https://wa.me/919000000000" class="whatsapp-float" target="_blank" aria-label="Contact us on WhatsApp">
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/911234567890" class="whatsapp-float" target="_blank" aria-label="WhatsApp Us">
     <i class="fa-brands fa-whatsapp"></i>
   </a>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer id="contact" class="footer">
     <div class="container grid-4">
       <div>
         <div class="logo" style="margin-bottom: 20px; color: #FFF;">
-          <div class="logo-icon"><i class="fa-solid fa-droplet"></i></div>
+          <div class="logo-icon"><i class="fa-solid fa-leaf"></i></div>
           <span>Hello Hygiene</span>
         </div>
-        <p>Bangalore's trusted partner for enterprise hygiene solutions, bulk chemical manufacturing, and private-label contract production.</p>
+        <p>Powerful cleaning solutions for every space. Trusted by homes, offices, hotels, and commercial kitchens.</p>
       </div>
       <div>
-        <h4>Products</h4>
+        <h4>Sectors</h4>
         <ul class="footer-links">
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Floor Cleaners</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Dish Wash Gel</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Liquid Hand Wash</a></li>
+          <li><a href="#sectors"><i class="fa-solid fa-angle-right"></i> Home Care</a></li>
+          <li><a href="#sectors"><i class="fa-solid fa-angle-right"></i> Office Parks</a></li>
+          <li><a href="#sectors"><i class="fa-solid fa-angle-right"></i> Hotels & Hospitality</a></li>
+          <li><a href="#sectors"><i class="fa-solid fa-angle-right"></i> Commercial Kitchens</a></li>
         </ul>
       </div>
       <div>
-        <h4>Company</h4>
+        <h4>Highlights</h4>
         <ul class="footer-links">
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> OEM Manufacturing</a></li>
-          <li><a href="#"><i class="fa-solid fa-angle-right"></i> Distributor Network</a></li>
+          <li><a href="#fragrances"><i class="fa-solid fa-angle-right"></i> Custom Fragrances</a></li>
+          <li><a href="#refills"><i class="fa-solid fa-angle-right"></i> Eco Refill Packs</a></li>
+          <li><a href="#bulk"><i class="fa-solid fa-angle-right"></i> Concentrated Drums</a></li>
         </ul>
       </div>
       <div>
-        <h4>Factory HQ</h4>
-        <p><i class="fa-solid fa-location-dot"></i> Peenya Industrial Area, Phase 1, Bangalore - 560058</p>
-        <p style="margin-top: 12px;"><i class="fa-solid fa-envelope"></i> contact@hellohygiene.in</p>
-        <p style="margin-top: 4px;"><i class="fa-solid fa-phone"></i> +91 80 1234 5678</p>
+        <h4>Contact HQ</h4>
+        <p><i class="fa-solid fa-earth-americas"></i> www.hellohygiene.com</p>
+        <p style="margin-top: 8px;"><i class="fa-solid fa-phone"></i> +91 12345 67890</p>
+        <p style="margin-top: 8px;"><i class="fa-solid fa-shield-halved"></i> Powerful Cleaning | Trusted Quality | Safe for Environment</p>
       </div>
     </div>
     <div class="container footer-bottom">
