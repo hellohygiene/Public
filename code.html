@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hello Hygiene - Sanitation Scaled for Modern Enterprise</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Public Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-lowest": "#ffffff",
+                        "outline": "#74777f",
+                        "outline-variant": "#c4c6cf",
+                        "on-secondary-container": "#646464",
+                        "inverse-surface": "#2e3132",
+                        "inverse-primary": "#aec7f6",
+                        "on-primary-container": "#708ab5",
+                        "on-tertiary-container": "#86898b",
+                        "surface": "#f8f9fa",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "secondary-fixed": "#e4e2e2",
+                        "on-error": "#ffffff",
+                        "tertiary": "#080b0d",
+                        "tertiary-fixed-dim": "#c4c7c9",
+                        "primary": "#000a1e",
+                        "on-secondary-fixed": "#1b1c1c",
+                        "on-primary-fixed-variant": "#2d476f",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-primary": "#ffffff",
+                        "on-error-container": "#93000a",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-fixed-variant": "#474747",
+                        "on-tertiary": "#ffffff",
+                        "on-surface": "#191c1d",
+                        "tertiary-fixed": "#e0e3e5",
+                        "secondary": "#5e5e5e",
+                        "on-primary-fixed": "#001b3d",
+                        "surface-dim": "#d9dadb",
+                        "background": "#f8f9fa",
+                        "on-background": "#191c1d",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#c8c6c6",
+                        "surface-tint": "#465f88",
+                        "tertiary-container": "#1e2224",
+                        "surface-container-highest": "#e1e3e4",
+                        "primary-container": "#002147",
+                        "primary-fixed": "#d6e3ff",
+                        "primary-fixed-dim": "#aec7f6",
+                        "surface-container": "#edeeef",
+                        "on-tertiary-fixed-variant": "#444749",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "on-surface-variant": "#44474e",
+                        "surface-container-low": "#f3f4f5",
+                        "on-tertiary-fixed": "#181c1e",
+                        "secondary-container": "#e4e2e2"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "xl": "80px",
+                        "lg": "48px",
+                        "md": "24px",
+                        "margin-desktop": "64px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Public Sans"],
+                        "body-lg": ["Public Sans"],
+                        "headline-lg-mobile": ["Public Sans"],
+                        "display-lg": ["Public Sans"],
+                        "body-md": ["Public Sans"],
+                        "label-sm": ["Public Sans"],
+                        "headline-lg": ["Public Sans"],
+                        "label-md": ["Public Sans"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "500" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        /* Industrial Minimalism specifics */
+        .card-enterprise {
+            background-color: theme('colors.surface-container-lowest');
+            border: 1px solid #B0B3B5; /* Silver Steel */
+            border-radius: theme('borderRadius.DEFAULT');
+        }
+        
+        .input-enterprise {
+            border: 1px solid #B0B3B5;
+            background-color: theme('colors.surface-container-lowest');
+            border-radius: theme('borderRadius.DEFAULT');
+        }
+        
+        .input-enterprise:focus {
+            border-color: theme('colors.primary-container');
+            border-width: 2px;
+            outline: none;
+            box-shadow: none;
+        }
+        
+        .btn-primary {
+            background-color: theme('colors.primary-container');
+            color: theme('colors.on-primary');
+            border-radius: theme('borderRadius.DEFAULT');
+            text-transform: uppercase;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: theme('colors.on-background');
+            border: 1px solid theme('colors.outline');
+            border-radius: theme('borderRadius.DEFAULT');
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary-container selection:text-white">
+<!-- Top Navigation (Shared Component) -->
+<nav class="bg-surface dark:bg-surface-container-highest w-full top-0 sticky border-b border-outline-variant dark:border-outline z-50">
+<div class="flex justify-between items-center px-margin-mobile md:px-margin-desktop py-md max-w-[1440px] mx-auto">
+<!-- Brand -->
+<a class="font-headline-md text-headline-md font-bold text-primary dark:text-on-primary-fixed uppercase tracking-wider" href="#">
+                HELLOHYGIENE
+            </a>
+<!-- Desktop Links -->
+<div class="hidden md:flex items-center space-x-gutter">
+<a class="text-primary dark:text-inverse-primary border-b-2 border-primary pb-1 font-label-md text-label-md uppercase tracking-wider hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 active:opacity-80" href="#">
+                    Products
+                </a>
+<a class="text-secondary dark:text-on-secondary-container font-label-md text-label-md uppercase tracking-wider hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 active:opacity-80" href="#">
+                    Industries
+                </a>
+<a class="text-secondary dark:text-on-secondary-container font-label-md text-label-md uppercase tracking-wider hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 active:opacity-80" href="#">
+                    Manufacturing
+                </a>
+<a class="text-secondary dark:text-on-secondary-container font-label-md text-label-md uppercase tracking-wider hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 active:opacity-80" href="#">
+                    Logistics
+                </a>
+<a class="text-secondary dark:text-on-secondary-container font-label-md text-label-md uppercase tracking-wider hover:text-primary dark:hover:text-primary-fixed transition-colors duration-200 active:opacity-80" href="#">
+                    About
+                </a>
+</div>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex btn-primary px-6 py-3 font-label-md text-label-md tracking-wider hover:opacity-90 transition-opacity" href="#quote">
+                GET A QUOTE
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative bg-surface-container-low border-b border-[#B0B3B5]">
+<div class="grid grid-cols-1 lg:grid-cols-12 max-w-[1440px] mx-auto">
+<div class="lg:col-span-6 px-margin-mobile md:px-margin-desktop py-xl md:py-[120px] flex flex-col justify-center">
+<span class="font-label-md text-label-md text-primary-container tracking-wider uppercase mb-sm border-l-2 border-primary-container pl-2">Wholesale Solutions for Bangalore &amp; Karnataka</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-md">
+                        Sanitation Scaled for Modern Enterprise.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">
+                        Engineered for high-stakes infrastructure, commercial facilities, and enterprise logistics. We deliver rigorous hygiene standards with uncompromising reliability.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-sm sm:gap-md">
+<a class="btn-primary px-8 py-4 font-label-md text-label-md text-center hover:bg-primary transition-colors" href="#quote">
+                            Request a Corporate Quote
+                        </a>
+<a class="btn-outline px-8 py-4 font-label-md text-label-md text-center hover:bg-surface-variant transition-colors" href="#products">
+                            Explore Bulk Catalog
+                        </a>
+</div>
+</div>
+<div class="lg:col-span-6 bg-surface-container h-[400px] lg:h-auto relative border-l border-[#B0B3B5]">
+<img alt="Industrial hygiene supplies" class="absolute inset-0 w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6x2z0azO9j6V46GgYUzNwr_HOcNzPqOtWqH8eRcCU2XoznY4SZEmeOhayItbI0j3uoblrWeFKdD7LPGcbLa1OWC1Z4sgoZSa1C1b02pvnopSKJzxIJU19nS6vMD6ZQiYILSuMkCOf2h4HEU-vXhyPKvhZlO56AMhfAcFJx3rzmVmwYxZFEDigQpL3OQe6s_QyKQS-X5Vu0eWricPc9GEcdtD1mvijWlvW80gBZUS6wQrFtCHieD2R"/>
+</div>
+</div>
+</section>
+<!-- Product Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto" id="products">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Enterprise Formulations</h2>
+<div class="h-1 w-16 bg-primary-container mt-sm"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Card 1 -->
+<div class="card-enterprise flex flex-col h-full group hover:shadow-[0px_4px_8px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="bg-surface-container-high p-md border-b border-[#B0B3B5] flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-weight="fill">science</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface px-2 py-1 border border-outline-variant rounded">BULK</span>
+</div>
+<div class="p-md flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Commercial Liquid Detergents</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">High-yield concentrated formulas for large-scale laundry operations.</p>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="card-enterprise flex flex-col h-full group hover:shadow-[0px_4px_8px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="bg-surface-container-high p-md border-b border-[#B0B3B5] flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-weight="fill">sanitizer</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface px-2 py-1 border border-outline-variant rounded">EQUIP</span>
+</div>
+<div class="p-md flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Automated Safety Apparatuses</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Touchless dispensing systems engineered for high-traffic environments.</p>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="card-enterprise flex flex-col h-full group hover:shadow-[0px_4px_8px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="bg-surface-container-high p-md border-b border-[#B0B3B5] flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-weight="fill">cleaning_services</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface px-2 py-1 border border-outline-variant rounded">IND</span>
+</div>
+<div class="p-md flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Heavy-Duty Floor Cleaners</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Industrial degreasers and maintenance solutions for warehouse and factory floors.</p>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="card-enterprise flex flex-col h-full group hover:shadow-[0px_4px_8px_rgba(0,0,0,0.1)] transition-shadow">
+<div class="bg-surface-container-high p-md border-b border-[#B0B3B5] flex justify-between items-start">
+<span class="material-symbols-outlined text-primary-container text-4xl" data-weight="fill">dry_cleaning</span>
+<span class="font-label-sm text-label-sm text-secondary bg-surface px-2 py-1 border border-outline-variant rounded">HOSP</span>
+</div>
+<div class="p-md flex-grow">
+<h3 class="font-headline-md text-headline-md text-primary mb-xs">Eco-Luxe Hospitality Amenities</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Premium bulk formulations designed for upscale hotel bathroom dispensaries.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Specialized Solutions (Bento Layout) -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-[1440px] mx-auto bg-surface-container-lowest border-y border-[#B0B3B5]">
+<div class="mb-lg">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Specialized Solutions for Every Space</h2>
+<div class="h-1 w-16 bg-primary-container mt-sm"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Large Feature -->
+<div class="lg:col-span-8 card-enterprise relative overflow-hidden h-[400px] lg:h-[500px] group">
+<img alt="Office park sanitation" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd_3_fDAOJzFkSgJgNbw98dxzZ9limw_BGQZaCRnSue4-Alv7AXK-kMeEolzaZvRzEJiARYmlDO640pbGSskh-FAB1J6y2FnoHfTDN4S5qAhO-ue2s7xYbeaCA5ECPmP45TI84n7Ilrk2RWdPrJKIZPkzKYS2imOetTQKp-BoIZzebeiGri52BGgV0cwhPk0jwBNUodToF9mL9vY1BxwqXm3JOJz5UI-43Gvq7vODXR2MgKbtpcFWv"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-lg w-full">
+<div class="flex items-center space-x-2 mb-sm">
+<span class="material-symbols-outlined text-surface text-2xl">business</span>
+<span class="font-label-md text-label-md text-surface uppercase tracking-wider">Corporate Tech Parks</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-surface mb-xs">Office &amp; Lobby Protocols</h3>
+<p class="font-body-md text-body-md text-surface-dim max-w-md">Touchless hygiene networks designed for high-density corporate environments.</p>
+</div>
+</div>
+<div class="lg:col-span-4 grid grid-rows-2 gap-gutter h-[400px] lg:h-[500px]">
+<!-- Sub Feature 1 -->
+<div class="card-enterprise relative overflow-hidden group">
+<img alt="Hotel laundry sanitation" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDUOk1s87wSzU0TU-kHC_FW7AvdvWFRn9cWzvjyfrr91IRi_EACDM-j3tv_szTcO3lQYkbG9rTZN5OaMBwf8VOKRYcEd4CSLPmyDu7-wrP3i2n2TRDluIIDmWJeG044DeR9rgWXTNn6kgJ_TE3jsJ9HZcrpyjPRSEVKx9e-uTzsmAp6wf36Ssyzyly9iX6XBxDnKdyV-GUoDwnA6LSbaoE8PgS2v_mwXzBGUPWq2j3kQUN9zss08Y8k"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<div class="flex items-center space-x-2 mb-xs">
+<span class="material-symbols-outlined text-surface text-xl">hotel</span>
+<span class="font-label-sm text-label-sm text-surface uppercase tracking-wider">Hospitality</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface">Large-Scale Housekeeping</h3>
+</div>
+</div>
+<!-- Sub Feature 2 -->
+<div class="card-enterprise relative overflow-hidden group">
+<img alt="Commercial kitchen sanitation" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHWRhN_XYlc5T9Iyd5GAYzaX2ubFWdPb_oijlCmH1dh_U5uAGB-sZ0jEq33ddZ1LlN429WtXqYMyfp-R3grTF922aCt4B81sKfQGRcsohOt8p6k7VDtuB7WRTkyfeQE4exUKGYq-Qkl3d-mK8Dl_hXq3M3jKAYstjUGYyv2XMTEoJTJ9WIXS15YIzBr3XTqxv3kQIOusiMei_saxxeaDmzfXSH-d19Hoa_kkY_8yAuYRNaX6W4VYF1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 p-md w-full">
+<div class="flex items-center space-x-2 mb-xs">
+<span class="material-symbols-outlined text-surface text-xl">restaurant</span>
+<span class="font-label-sm text-label-sm text-surface uppercase tracking-wider">Food Service</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface">Food-Safe Standards</h3>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Lead Form Section -->
+<section class="py-xl px-margin-mobile md:px-margin-desktop max-w-[1024px] mx-auto" id="quote">
+<div class="card-enterprise p-lg md:p-xl flex flex-col md:flex-row gap-xl">
+<div class="md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-md">Enterprise Partnership</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">
+                        Initiate a corporate account setup. Our specialized B2B team will analyze your operational requirements and provide a structured bulk pricing tier.
+                    </p>
+<ul class="space-y-sm">
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary-container mr-3 mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Dedicated Account Manager</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary-container mr-3 mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Scheduled Deliveries in Karnataka</span>
+</li>
+<li class="flex items-start">
+<span class="material-symbols-outlined text-primary-container mr-3 mt-1">check_circle</span>
+<span class="font-body-md text-body-md text-on-surface">Compliance Documentation &amp; SDS</span>
+</li>
+</ul>
+</div>
+<div class="md:w-1/2 bg-surface p-lg border border-[#B0B3B5] rounded">
+<form action="#" class="space-y-md" method="POST">
+<div>
+<label class="block font-label-md text-label-md text-on-surface uppercase mb-2" for="company">Company Name</label>
+<input class="input-enterprise w-full p-3 font-body-md text-body-md" id="company" name="company" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface uppercase mb-2" for="email">Business Email</label>
+<input class="input-enterprise w-full p-3 font-body-md text-body-md" id="email" name="email" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-on-surface uppercase mb-2" for="volume">Estimated Monthly Volume (Liters)</label>
+<select class="input-enterprise w-full p-3 font-body-md text-body-md text-on-surface-variant" id="volume" name="volume">
+<option>Less than 100L</option>
+<option>100L - 500L</option>
+<option>500L - 2000L</option>
+<option>2000L+</option>
+</select>
+</div>
+<button class="btn-primary w-full py-4 font-label-md text-label-md mt-sm hover:bg-primary transition-colors" type="submit">
+                            SUBMIT INQUIRY
+                        </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer (Shared Component) -->
+<footer class="bg-tertiary dark:bg-black w-full border-t border-[#B0B3B5]">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-gutter px-margin-mobile md:px-margin-desktop py-xl max-w-[1440px] mx-auto">
+<div class="lg:col-span-4">
+<span class="font-headline-md text-headline-md text-surface font-bold uppercase tracking-wider block mb-md">
+                    HELLOHYGIENE
+                </span>
+<p class="font-body-md text-body-md text-on-tertiary opacity-80 max-w-sm">
+                    © 2024 Hello Hygiene Industrial. Bangalore Regional HQ. All rights reserved.
+                </p>
+</div>
+<div class="lg:col-span-8 flex flex-wrap gap-lg lg:justify-end">
+<div class="flex flex-col space-y-sm">
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-container-lowest transition-all opacity-100" href="#">Privacy Policy</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-container-lowest transition-all opacity-100" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col space-y-sm">
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-container-lowest transition-all opacity-100" href="#">Compliance</a>
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-container-lowest transition-all opacity-100" href="#">SDS Sheets</a>
+</div>
+<div class="flex flex-col space-y-sm">
+<a class="font-body-md text-body-md text-tertiary-fixed-dim hover:text-surface-container-lowest transition-all opacity-100" href="#">Contact Sales</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
